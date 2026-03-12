@@ -1,0 +1,45 @@
+.header {
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  background: white;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+select {
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.dark-btn {
+  font-size: 22px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+.dark-mode {
+  background: #121212;
+  color: white;
+}
+
+.dark-mode .header {
+  background: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
