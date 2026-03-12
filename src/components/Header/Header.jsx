@@ -20,7 +20,6 @@ function Header() {
           <div className="header-container">
             <h1>Uylar</h1>
 
-            {/* Desktop menu */}
             <div className={`header-right ${menuOpen ? "active" : ""}`}>
               <form>
                 <select id="language" name="language">
@@ -48,7 +47,6 @@ function Header() {
               </div>
             </div>
 
-            {/* Hamburger Menu Icon */}
             <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? <FiX /> : <FiMenu />}
             </div>
@@ -56,7 +54,6 @@ function Header() {
         </div>
       </section>
 
-      {/* Register Modal */}
       <RegisterModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
