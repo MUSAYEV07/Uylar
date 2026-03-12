@@ -20,7 +20,7 @@ function Hero() {
   return (
    <section className='hero'>
        <div className="hero-container">
-      <h1>Properties</h1>
+      <h1>Tanlangan uy-joylar</h1>
       <div className="properties-grid">
         {properties.map((item) => (
           <div key={item.id} className="property-card">
