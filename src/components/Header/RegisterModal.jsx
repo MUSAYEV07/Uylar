@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import "./RegisterModal.css";
 
 function RegisterModal({ isOpen, onClose }) {
-    const[name, setName]= useState();
-    const[email, seEmail]=useState();
-
-    sendMassage = (e) =>{
-        e.preventDefault();
-    }
+    
 
   if (!isOpen) return null;
 

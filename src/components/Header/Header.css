@@ -1,11 +1,18 @@
+/* =======================
+   Header Basic Styling
+======================= */
 .header {
   padding: 15px 0;
   border-bottom: 1px solid #ddd;
   background: white;
+  position: relative;
+  z-index: 10;
+  transition: background 0.3s, color 0.3s;
 }
 
 .container {
   width: 90%;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -15,31 +22,162 @@
   align-items: center;
 }
 
+/* Logo / Title */
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Desktop menu */
 .header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Form select styling */
+select {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+/* Header icons */
+.header-icons {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-select {
-  padding: 6px 10px;
-  border-radius: 5px;
-}
-
+/* Dark mode toggle button */
 .dark-btn {
   font-size: 22px;
   border: none;
   background: transparent;
   cursor: pointer;
+  transition: transform 0.2s;
 }
 
+.dark-btn:hover {
+  transform: scale(1.1);
+}
 
-.dark-mode {
+/* Bell icon */
+.bell {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Register button */
+.register-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.register-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* =======================
+   Dark Mode
+======================= */
+body.dark-mode {
   background: #121212;
-  color: white;
+  color: #fff;
 }
 
-.dark-mode .header {
+body.dark-mode .header {
   background: #1e1e1e;
   border-bottom: 1px solid #333;
+}
+
+body.dark-mode select {
+  background: #333;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+body.dark-mode .register-btn {
+  background-color: #1a73e8;
+}
+
+/* =======================
+   Hamburger Menu
+======================= */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .header-container {
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .header-right {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    display: none;
+    gap: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .header-right.active {
+    display: flex;
+  }
+
+  body.dark-mode .header-right {
+    background: #1e1e1e;
+    border-color: #333;
+  }
+
+  /* Make icons and select full width */
+  .header-right form,
+  .header-icons,
+  .register-btn {
+    width: 100%;
+  }
+
+  .header-right form select {
+    width: 100%;
+  }
+
+  .header-icons {
+    justify-content: space-between;
+  }
+}
+
+/* Optional: smooth hover effects */
+.header h1:hover {
+  color: #007bff;
+  transition: color 0.3s;
 }

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { FiBell, FiUserPlus } from "react-icons/fi";
+import { FiBell, FiUserPlus, FiMenu, FiX } from "react-icons/fi";
 import RegisterModal from "./RegisterModal";
-
 import "./Header.css";
 
 function Header() {
   const [darkMode, setDarkMode] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false); // 👈 modal state qo‘shildi
+  const [modalOpen, setModalOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -20,7 +20,8 @@ function Header() {
           <div className="header-container">
             <h1>Uylar</h1>
 
-            <div className="header-right">
+            {/* Desktop menu */}
+            <div className={`header-right ${menuOpen ? "active" : ""}`}>
               <form>
                 <select id="language" name="language">
                   <option value="en">English</option>
@@ -42,19 +43,21 @@ function Header() {
                   className="register-btn"
                   onClick={() => setModalOpen(true)}
                 >
-                  <FiUserPlus /> Ro'yxatdan o'tish
+                  <FiUserPlus />
                 </button>
               </div>
+            </div>
+
+            {/* Hamburger Menu Icon */}
+            <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+              {menuOpen ? <FiX /> : <FiMenu />}
             </div>
           </div>
         </div>
       </section>
 
       {/* Register Modal */}
-      <RegisterModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-      />
+      <RegisterModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }
