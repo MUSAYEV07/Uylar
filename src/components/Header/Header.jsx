@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { FiBell, FiUserPlus, FiMenu, FiX } from "react-icons/fi";
 import RegisterModal from "./RegisterModal";
+import Search from "./Search";
 import "./Header.css";
 
-function Header() {
+function Header({ onSearch }) {
   const [darkMode, setDarkMode] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,11 +20,12 @@ function Header() {
         <div className="container">
           <div className="header-container">
             <h1>Uylar</h1>
-            
+
+            <Search onSearch={onSearch} />
 
             <div className={`header-right ${menuOpen ? "active" : ""}`}>
               <form>
-                <select id="language" name="language">
+                <select>
                   <option value="en">English</option>
                   <option value="ru">Русский</option>
                   <option value="uz">O'zbek</option>
