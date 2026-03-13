@@ -19,6 +19,7 @@ function Header() {
         <div className="container">
           <div className="header-container">
             <h1>Uylar</h1>
+            
 
             <div className={`header-right ${menuOpen ? "active" : ""}`}>
               <form>
