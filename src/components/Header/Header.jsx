@@ -19,10 +19,12 @@ function Header({ onSearch }) {
       <section className="header">
         <div className="container">
           <div className="header-container">
-            <h1>Uylar</h1>
-
-            <Search onSearch={onSearch} />
-
+            <div className="uylar">
+              <h1>Uylar</h1>
+              <span className="header-span">
+                <Search onSearch={onSearch}/>
+              </span>
+            </div>
             <div className={`header-right ${menuOpen ? "active" : ""}`}>
               <form>
                 <select>

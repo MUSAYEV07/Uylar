@@ -159,3 +159,11 @@ body.dark-mode .header {
     justify-content: center;
   }
 }
+.uylar {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+.header-span{
+  margin-top: 30px;
+}
